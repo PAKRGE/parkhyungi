@@ -5,18 +5,18 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-        static Scanner SCANNER = new Scanner(System.in);
+    private final static Scanner SCANNER = new Scanner(System.in);
     public static void main(String[] args) {
 
         System.out.println("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).");
         String[] nameInput = SCANNER.next().split(",");
         List<Car> carList = Arrays.stream(nameInput)
-                .map((String carName) -> new Car(carName,0))
+                .map((String carName) -> new Car(carName))
                 .toList();
 
         System.out.println("시도할 횟수를 입력하세요.");
         int tryCount = SCANNER.nextInt();
-        RandomMoveCondition randomMoveResult = new RandomMoveCondition();
+        MoveCondition randomMoveResult = new RandomMoveCondition();
         for (int i = 0; i < tryCount; i++) {
             for(Car car : carList) {
                 if(randomMoveResult.isMove()) {

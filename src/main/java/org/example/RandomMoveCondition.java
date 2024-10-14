@@ -4,15 +4,10 @@ import java.util.Random;
 
 public class RandomMoveCondition implements MoveCondition {
         final int randomInput = 10;
-        Random RANDOM = new Random();
+        private final static Random RANDOM = new Random();
 
         @Override
         public boolean isMove() {
-            int randomOutput = RANDOM.nextInt(randomInput);
-            if (randomOutput > 3) {
-                return true;
-            } else {
-                return false;
-            }
+            return RANDOM.nextInt(randomInput) > 3;
         }
 }

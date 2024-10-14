@@ -1,14 +1,12 @@
 package org.example;
 
-import java.util.Random;
-
 public class Car {
     private final String carName;
     private int moveCount;
 
-    public Car(String carName, int moveCount) {
+    public Car(String carName) {
         this.carName = carName;
-        this.moveCount = moveCount;
+        this.moveCount = 0;
     }
 
     public String getCarName() {
@@ -22,7 +20,6 @@ public class Car {
     public void isMove() {
         moveCount++;
     }
-
 }
 
 
