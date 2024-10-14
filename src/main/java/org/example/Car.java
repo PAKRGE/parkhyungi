@@ -1,25 +1,14 @@
 package org.example;
 
-
 import java.util.Random;
 
-public class Car extends RandomMoveConditon {
+public class Car {
     private final String carName;
     private int moveCount;
-    private String moveResult;
 
-    public Car(String carName, int moveCount, String moveResult) {
+    public Car(String carName, int moveCount) {
         this.carName = carName;
         this.moveCount = moveCount;
-        this.moveResult = moveResult;
-    }
-
-    public void setMoveResult(String result) {
-        moveResult = moveResult + result;
-    }
-
-    public String getMoveResult() {
-        return moveResult;
     }
 
     public String getCarName() {
@@ -30,28 +19,27 @@ public class Car extends RandomMoveConditon {
         return moveCount;
     }
 
-    public void moveCar() {
+    public void isMove() {
         moveCount++;
     }
 
-
 }
 
-interface MoveConditon {
+interface MoveCondition {
     boolean isMove();
 }
 
-class RandomMoveConditon implements MoveConditon {
-    private final Random RANDOM = new Random();
+class RandomMoveCondition implements MoveCondition {
     final int randomInput = 10;
+    Random RANDOM = new Random();
 
     @Override
     public boolean isMove() {
-        if(3 < RANDOM.nextInt(randomInput)) {
+        int randomOutput = RANDOM.nextInt(randomInput);
+        if (randomOutput > 3) {
             return true;
         } else {
             return false;
         }
     }
 }
-
