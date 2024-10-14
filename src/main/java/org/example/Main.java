@@ -35,9 +35,10 @@ public class Main {
                     winnerName = car.getCarName();
                 } else {
                     winnerName = "%s,%s".formatted(winnerName, car.getCarName());
+                    // winnerName = winnerName + "," + car.getCarName();
                 }
             }
         }
-        System.out.printf("%s가 최종 우승하였습니다.%n", winnerName);
+        System.out.printf("%s가 최종 우승하였습니다.", winnerName);
      }
 }
