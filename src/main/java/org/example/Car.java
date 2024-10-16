@@ -17,7 +17,7 @@ public class Car {
         return moveCount;
     }
 
-    public void isMove() {
+    public void move() {
         moveCount++;
     }
 }

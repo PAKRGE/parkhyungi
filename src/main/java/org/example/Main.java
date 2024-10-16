@@ -24,7 +24,7 @@ public class Main {
         for (int i = 0; i < tryNum; i++) {
             for (Car carName : carList) {
                 if (condition.isMove()) {
-                    carName.isMove();
+                    carName.move();
                 }
                 System.out.printf("%s : %s%n", carName.getCarName(),"-".repeat(carName.getMoveCount()));
             }
