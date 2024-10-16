@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Random;
 
-public class RandomMoveCondition implements MoveCondition{
+public class RandomMoveCondition implements MoveCondition {
     private static final Random RANDOM = new Random();
     private final int RANDOMCONDTION = 10;
 
